@@ -11,8 +11,10 @@
 
     <header>
         <div class="logo"><a href="#home">⚡︎SpeedX</a></div>
+
+
         <nav>
-            <ul>
+            <ul class="navbar-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">About</a></li>
@@ -20,12 +22,19 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
     </header>
 
     <section id="home" class="hero">
             <h1>Welcome to ⚡︎SpeedX Motors</h1>
-            <p>Your one-stop destination for stylish, reliable, and high-performance car. <br> Explore the latest models from top brands like Tesla, BMW, Toyota, and more.</p>
-            <button>Explore More</button> 
+            <p>Your one-stop destination for stylish, reliable, and high-performance cars. <br> Explore the latest models from top brands like Tesla, BMW, Toyota, and more.</p>
+            <a href="#features" class="btn">Explore More</a>
+
     </section>
 
     <section id="features" class="features">
@@ -54,9 +63,7 @@
         <h3>About SpeedX Motors</h3>
         <div class="about-info">
             <p>Founded in 2010, SpeedX Motors has grown into one of India’s most trusted car dealerships. With over 5,000 happy customers and a wide range of cars, we aim to provide a seamless car-buying experience.</p>
-
             <p>Our mission is to bring you quality cars at the best prices, backed by world-class customer service.</p>
-
             <p>Whether you're looking for an electric car, a family SUV, or a luxury sedan, we’ve got you covered.</p>
         </div>
     </section>
@@ -65,29 +72,25 @@
         <h3>Our Services</h3>
         <div class="service-container">
             <div class="service">
-                <h3>🚗 New Car Sales</h3>
+                <h5>🚗 New Car Sales</h5>
                 <p>Browse the latest models from top brands with expert guidance and transparent pricing.</p>
             </div>
 
             <div class="service">
-                <h3>🔁 Used Car Exchange</h3>
+                <h5>🔁 Used Car Exchange</h5>
                 <p>Exchange your old car for a brand-new one with easy paperwork and fair value offers.</p>
             </div>
 
             <div class="service">
-                <h3>💰 Car Financing</h3>
+                <h5>💰 Car Financing</h5>
                 <p>Get low-interest EMIs through our trusted banking partners. Instant approval available!</p>
             </div>
 
             <div class="service">
-                <h3>🛡️ Insurance & Registration</h3>
+                <h5>🛡️ Insurance & Registration</h5>
                 <p>We handle your car insurance and RTO registration so you don’t have to.</p>
             </div>
 
-            <div class="service">
-                <h3>🔧 Servicing & Repairs</h3>
-                <p>Our certified mechanics offer servicing, detailing, and repair services at our in-house workshop.</p>
-            </div>
 
         </div>
     </section>
@@ -129,8 +132,36 @@
             <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-        <p>Copyright © - Right Reserved 2025</p>
+        <p>Copyright &copy; - Right Reserved 2025</p>
     </footer>
 
+    <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navbar-menu');
+            const navLinks = document.querySelectorAll('.navbar-menu a');
+
+            // Toggle menu on hamburger click
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+                menuToggle.innerHTML = navMenu.classList.contains('show') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close menu when clicking a nav link
+            navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+    </script>
+
+
 </body>
-</html>
+ </html>
+
+   
+    
+     
